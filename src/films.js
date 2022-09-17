@@ -1,14 +1,14 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result = array.map(pelicula => pelicula.director);
-  console.log("EXERCICE 1 DIRECTORS ->", result);
+  console.log("EXERCICE 1 - DIRECTORS ->", result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let result = array.filter((pelicula) => pelicula.director == director);
-  console.log("EXERCICE 2 FILMS OF DIRECTOR ->", result);
+  console.log("EXERCICE 2 - FILMS OF DIRECTOR ->", result);
   return result;
  
 }
@@ -19,7 +19,7 @@ function moviesAverageOfDirector(array, director) {
   let sumaScore = arrayDirector.reduce((acu, pelicula) => acu + pelicula.score,0);
   let AverageOfDirector = sumaScore / arrayDirector.length;
   //let patata = parseFloat(AverageOfDirector.toFixed(2));
- // console.log("EXERCICE 3 ->", patata);
+ // console.log("EXERCICE 3 - AVERAGE FILMS DIRECTORS ->", patata);
   return parseFloat(AverageOfDirector.toFixed(2));
 
 }
@@ -28,14 +28,14 @@ function moviesAverageOfDirector(array, director) {
 function orderAlphabetically(array) {
   let listaPeliculas = array.sort ((a, b) => a.title.localeCompare(b.title));
   let selectionMovies = listaPeliculas.slice(0,20);
-  console.log ("EXERCICE 4 ->", selectionMovies);
+  console.log ("EXERCICE 4 - ORDER ALPHABETICALLY ->", selectionMovies);
   return selectionMovies;
 }
 
 // Exercise 5: Order by year, ascending
 function orderByYear(movies) {
   let result = movies.sort(compare);
-  console.log("EXERCICE 5 ->", result);
+  console.log("EXERCICE 5 - ORDER BY YEARS ->", result);
   return result;
 }
 function compare (a,b){
@@ -61,7 +61,10 @@ function compare (a,b){
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+function moviesAverageByCategory(genre) {
+
+  console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", result);
+  return result;
 
 }
 
