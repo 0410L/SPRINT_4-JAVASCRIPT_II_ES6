@@ -62,10 +62,12 @@ function compare (a,b){
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory(array) {
-  let arrayCategoria = array.filter(pelicula => pelicula.genre);
-  let sumaAverageCategoria = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
-  let result = sumaAverageCategoria / arrayCategoria.length;
+function moviesAverageByCategory(array,categoria) {
+  let arrayCategoria = array.filter(pelicula => pelicula.genre.includes(categoria));
+  let sum = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
+  //let result = sumaAverageCategoria / arrayCategoria.length;
+  //let sum = arrayCategoria.reduce((a,b) => a.score + b.score,0);
+  let result = sum / arrayCategoria.length;
   console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", result);
   return parseFloat (result.toFixed(2));
 }
