@@ -34,7 +34,7 @@ function orderAlphabetically(array) {
 // Exercise 5: Order by year, ascending
 function orderByYear(movies) {
   let result = movies.sort(compare);
-  //let result = movies.sort((a,b) => (a.title > b.title) ? -1 : ((a.title < b.title) ? 1 : 0))
+  //let result = movies.sort((a,b) => a.year == b.year ? a.title > b.title ? 1 : -1 : a.year > b.year ? 1 : -1);
   let final = result;
   console.log("EXERCICE 5 - ORDER BY YEARS ->", final);
   return final;
@@ -64,19 +64,20 @@ function compare (a,b){
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array,categoria) {
   let arrayCategoria = array.filter(pelicula => pelicula.genre.includes(categoria));
-  let sum = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
-  //let result = sumaAverageCategoria / arrayCategoria.length;
-  //let sum = arrayCategoria.reduce((a,b) => a.score + b.score,0);
+  //let sum = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
+  let sum = arrayCategoria.reduce((a,b) => a + b.score,0);
+  //let sum = arrayCategoria.reduce((a,b) => b.score != null ? a + b.score: a + 0,0);
   let result = sum / arrayCategoria.length;
   console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", result);
   return parseFloat (result.toFixed(2));
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array,duration) {
+  let result = array.reduce(duration => duration.minutes)
 
-  //console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", result);
-  //return result;
+  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", result);
+  return result;
 
 }
 
