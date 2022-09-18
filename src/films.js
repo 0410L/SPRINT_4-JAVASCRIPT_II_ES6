@@ -17,10 +17,9 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let arrayDirector = array.filter((pelicula) => pelicula.director == director ?? pelicula.score);  //?? condicion if
   let sumaScore = arrayDirector.reduce((acu, pelicula) => acu + pelicula.score,0);
-  let averageOfDirector = sumaScore / arrayDirector.length;
-  //let patata = parseFloat(AverageOfDirector.toFixed(2));
- // console.log("EXERCICE 3 - AVERAGE FILMS DIRECTORS ->", patata);
-  return parseFloat(averageOfDirector.toFixed(2));
+  let result = sumaScore / arrayDirector.length;
+  //let patata = parseFloat(result.toFixed(2));
+  return parseFloat(result.toFixed(2));
 
 }
 
@@ -39,8 +38,6 @@ function orderByYear(movies) {
   let final = result;
   console.log("EXERCICE 5 - ORDER BY YEARS ->", final);
   return final;
-
-
 }
 function compare (a,b){
   if(a.year > b.year){
@@ -65,13 +62,12 @@ function compare (a,b){
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory(genre) {
-  let arrayPelicula = array.filter((category) => category.genre == genre ?? category.genre);
-  let sumaAverageCategory = arrayPelicula.reduce((acu, pelicula) => acu + pelicula.genre,0);
-  let averagePelicula = sumaAverageCategory / arrayPelicula.length;
-  console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", averagePelicula);
-  return parseFloat (averagePelicula.toFixed(2));
-
+function moviesAverageByCategory(array) {
+  let arrayCategoria = array.filter(pelicula => pelicula.genre);
+  let sumaAverageCategoria = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
+  let result = sumaAverageCategoria / arrayCategoria.length;
+  console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", result);
+  return parseFloat (result.toFixed(2));
 }
 
 // Exercise 7: Modify the duration of movies to minutes
@@ -89,6 +85,9 @@ function bestFilmOfYear() {
   //return result;
 
 }
+
+
+
 
 
 
