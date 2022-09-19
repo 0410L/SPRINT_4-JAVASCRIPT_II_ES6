@@ -81,18 +81,34 @@ function hoursToMinutes(array,duration) {
 }
 function textoAminutos (textoMin){
   let contador = textoMin.split(" "); //["2h", "14min"] la separacion
-  let minutos = parseInt(contador[0].replace("h","")*60);
-      if(contador.length == 2){
-        minutos += parseInt(contador[1].replace("min",""));
-      }
+  let minutos;
+  if(contador.length == 1){
+    if(contador[0].indexOf("h">= 0)){
+      minutos = parseInt(contador[0].replace("h","")*60);
+
+    }
+    else{
+      minutos = parseInt(contador[0].replace("min",""));
+    }
+  }
+    else{
+      minutos = parseInt(contador[0].replace("h","")*60);
+      minutos += parseInt(contador[1].replace("min",""));
+    }
   
 return minutos;
 }
 
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
+function bestFilmOfYear(array) {
+  let arrayBestMovie = array.map(pelicula => pelicula.score).sort();
+  let result = arrayBestMovie.slice(0,20);
+  console.log ("EXERCICE 8 - GET THE BEST FILM ->", result);
+  return result;
+
+  //let result = array.sort(pelicula => pelicula.score);
+  //let mejorPelicula = result 
   //console.log ("EXERCICE 8 - GET THE BEST FILM  ->", result);
   //return result;
 
