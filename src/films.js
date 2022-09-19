@@ -74,12 +74,21 @@ function moviesAverageByCategory(array,categoria) {
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array,duration) {
-  let result = array.map(pelicula => pelicula.duration)
+  let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration)); 
   //console.log ("demo", array);
   console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", result);
   return result;
-
 }
+function textoAminutos (textoMin){
+  let contador = textoMin.split(" "); //["2h", "14min"] la separacion
+  let minutos = parseInt(contador[0].replace("h","")*60);
+      if(contador.length == 2){
+        minutos += parseInt(contador[1].replace("min",""));
+      }
+  
+return minutos;
+}
+
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
