@@ -103,16 +103,18 @@ return minutos;
 
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear(array,) {
-  let arrayBestMovie = array.map(pelicula => pelicula.score);
-  let result = arrayBestMovie.sort(function(a,b){return b-a});
-  console.log ("EXERCICE 8 - GET THE BEST FILM ->", result);
-  return result;
+//function bestFilmOfYear(array, movies) {
+function bestFilmOfYear(array) {
 
-  //let result = array.sort(pelicula => pelicula.score);
-  //let mejorPelicula = result 
-  //console.log ("EXERCICE 8 - GET THE BEST FILM  ->", result);
-  //return result;
+  //let result = movies.sort(function(a,b){return b-a});
+  //let mejorPelicula = [...result];
+  //console.log ("EXERCICE 8 - GET THE BEST FILM ->", mejorPelicula);
+  //return mejorPelicula;
+
+  let result = array.map(pelicula => pelicula.score);
+  let mejorPelicula = [...result];
+  console.log ("EXERCICE 8 - GET THE BEST FILM  ->", mejorPelicula);
+  return mejorPelicula;
 
 }
 
