@@ -35,7 +35,7 @@ function orderAlphabetically(array) {
 function orderByYear(movies) {
   let result = movies.sort(compare);
   //let result = movies.sort((a,b) => a.year == b.year ? a.title > b.title ? 1 : -1 : a.year > b.year ? 1 : -1);
-  let final = result;
+  let final = [...result];
   console.log("EXERCICE 5 - ORDER BY YEARS ->", final);
   return final;
 }
