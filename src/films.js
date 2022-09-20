@@ -64,12 +64,13 @@ function compare (a,b){
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array,categoria) {
   let arrayCategoria = array.filter(pelicula => pelicula.genre.includes(categoria));
-  //let sum = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0);
-  let sum = arrayCategoria.reduce((a,b) => a + b.score,0);
-  //let sum = arrayCategoria.reduce((a,b) => b.score != null ? a + b.score: a + 0,0);
-  let result = sum / arrayCategoria.length;
-  console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", result);
-  return parseFloat (result.toFixed(2));
+  let moviesAverage = arrayCategoria.filter(pelicula => pelicula.score).length;
+  //let sum = arrayCategoria.reduce((acu, pelicula) => acu + pelicula.score,0).length;
+    //let sum = arrayCategoria.reduce((a,b) => b.score != null ? a + b.score: a + 0,0);
+  let result = arrayCategoria.reduce((a,b) => a + b.score,0);
+  let final = result / moviesAverage;
+  console.log ("EXERCICE 6 - AVERAGE FROM CATEGORIES ->", final);
+  return parseFloat (final.toFixed(2));
 }
 
 
@@ -91,6 +92,7 @@ function textoAminutos (textoMin){
     }
     else{
       minutos = parseInt(contador[0].replace("min",""));
+      
     }
   }
     else{
@@ -115,6 +117,7 @@ function bestFilmOfYear(array) {
   let mejorPelicula = [...result];
   console.log ("EXERCICE 8 - GET THE BEST FILM  ->", mejorPelicula);
   return mejorPelicula;
+
 
 }
 
