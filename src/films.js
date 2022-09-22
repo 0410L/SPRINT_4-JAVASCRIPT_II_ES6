@@ -75,42 +75,53 @@ function moviesAverageByCategory(array,categoria) {
 
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes(array,duration) {
+function hoursToMinutes(array) {
+
+  /*
   let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration));
-  let final = [...result];
-  //console.log ("demo", array);
-  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", final);
-  return final;
+  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", result);
+  return result;
+  */
+
+
+  
+  let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration));
+  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", array)
+  return array;
+  
 }
-function textoAminutos (textoMin){
-  let contador = textoMin.split(" "); //["2h", "14min"] la separacion
-  let minutos;
+
+function textoAminutos (array){
+  let contador = array.split(" "); //["2h", "14min"] la separacion
     if(contador.length == 1){
      if(contador[0].indexOf("h">= 0)){
-      minutos = parseInt(contador[0].replace("h","")*60);
-
-    }
-    else{
-      minutos = parseInt(contador[0].replace("min",""));
+         minutos = parseInt(contador[0].replace("h","")*60);
+      }
+    
+      else if(!contador[0].indexOf("m">= 0)){
+        minutos = parseInt(contador[0].replace("","min"));
+      }
+        else{
+        minutos = parseInt(contador[0].replace("min",""));
+        }
+      }
       
-    }
-    }
-    else{
+      else{
       minutos = parseInt(contador[0].replace("h","")*60);
       minutos += parseInt(contador[1].replace("min",""));
+
     }
-  
+
 return minutos;
 }
 
 
+
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
-  
-
   let result = array.filter(pelicula => pelicula.year);
   let resultYears = result.sort((a,b) => a.score > b.score ? 1 : a.score > b.score ? -1 : -1);
-
+  //let mejorPelicula = [...result];
   let mejorPelicula = resultYears.slice(result.length -1);
   console.log ("EXERCICE 8 - GET THE BEST FILM ->", mejorPelicula);
   return mejorPelicula;
