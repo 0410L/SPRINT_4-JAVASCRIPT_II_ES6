@@ -86,8 +86,9 @@ function hoursToMinutes(array) {
 
   
   let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration));
-  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", array)
-  return array;
+  final = array.slice();
+  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", final)
+  return final;
   
 }
 
