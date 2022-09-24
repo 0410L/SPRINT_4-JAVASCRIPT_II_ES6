@@ -76,24 +76,22 @@ function moviesAverageByCategory(array,categoria) {
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
+  let result= array.map(pelicula => pelicula.duration = parseInt(textoAminutos(pelicula.duration))); 
+  final = [...array];
+  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", final);
+  return final;
+
 
   /*
   let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration));
   console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", result);
   return result;
   */
-
-
-  
-  let result = array.map(pelicula => pelicula.duration = textoAminutos(pelicula.duration));
-  final = array.slice();
-  console.log ("EXERCICE 7 - TRANSFORM DURATION MOVIES IN MINUTES ->", final)
-  return final;
   
 }
 
-function textoAminutos (array){
-  let contador = array.split(" "); //["2h", "14min"] la separacion
+function textoAminutos (texto){
+  let contador = texto.split(" "); //["2h", "14min"] la separacion
     if(contador.length == 1){
      if(contador[0].indexOf("h">= 0)){
          minutos = parseInt(contador[0].replace("h","")*60);
